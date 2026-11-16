@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis tareas 💜</title>
+    <link rel="stylesheet" href="listadetareasevelyn.css">
+</head>
+
+<body>
+
+<main class="app">
+
+    <header class="encabezado">
+        <div class="titulo">
+            <div>
+                <h1>Mis tareas ♡</h1>
+                <p>Stay organized, stay motivated, achieve greatness.</p>
+            </div>
+        </div>
+
+        <div class="postit">
+            <span></span>
+            <p>Profe, Póngame 10 de calificación final 🐐</p>
+            <small>(y las Chivotas ganan la 13)</small>
+        </div>
+    </header>
+
+    <section class="estadisticas">
+
+        <div class="stat">
+            <span>Total de tareas</span>
+            <strong id="total">0</strong>
+        </div>
+
+        <div class="stat">
+            <span>Completadas</span>
+            <strong id="completadas">0</strong>
+        </div>
+
+        <div class="stat">
+            <span>Racha</span>
+            <strong id="racha">0</strong>
+        </div>
+
+        <div class="stat">
+            <span>Porcentaje</span>
+            <strong id="porcentaje">0%</strong>
+        </div>
+
+    </section>
+
+    <section class="frase">
+        <h2>¡Tú puedes lograrlo!</h2>
+        <p>Cada pequeño avance cuenta. ♡</p>
+    </section>
+
+    <section class="panel progreso">
+        <h2>Daily Progress</h2>
+
+        <div class="circulo" id="circulo">
+            <strong id="progresoNumero">0%</strong>
+            <small>Completado</small>
+        </div>
+
+        <p id="resumen">¡Comienza con tus tareas!</p>
+    </section>
+
+    <section class="panel calendario">
+
+        <div class="calendario-titulo">
+            <h2>Calendario</h2>
+
+            <div>
+                <button id="anterior">❮</button>
+                <strong id="mesAnio"></strong>
+                <button id="siguiente">❯</button>
+            </div>
+        </div>
+
+        <div class="dias">
+            <span>L</span>
+            <span>M</span>
+            <span>M</span>
+            <span>J</span>
+            <span>V</span>
+            <span>S</span>
+            <span>D</span>
+        </div>
+
+        <div class="numeros" id="numeros"></div>
+
+    </section>
+
+    <section class="panel tareas">
+
+        <div class="tareas-titulo">
+            <h2>My Tasks ♡</h2>
+            <button id="agregar">+ Agregar tarea</button>
+        </div>
+
+        <div class="filtros">
+            <button class="activo" data-filtro="todas">All</button>
+            <button data-filtro="pendientes">Pending</button>
+            <button data-filtro="completadas">Completed</button>
+        </div>
+
+        <ul id="listaTareas"></ul>
+
+    </section>
+
+    <footer>
+        ♡ Tú puedes ♡
+    </footer>
+
+</main>
+
+<script src="listadetareasevelyn.js"></script>
+
+</body>
+</html>

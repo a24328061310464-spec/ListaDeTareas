@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #eee9ff;
+    color: #40345e;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.app {
+    max-width: 850px;
+    margin: auto;
+}
+
+.encabezado, .titulo, .calendario-titulo, .tareas-titulo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.titulo {
+    justify-content: flex-start;
+}
+
+h1 {
+    font-size: 27px;
+}
+
+.titulo p, .postit small {
+    color: #82769e;
+}
+
+/* Post-it lila con alfiler */
+
+.postit {
+    position: relative;
+    background: #e5d8ff;
+    max-width: 230px;
+    padding: 22px 16px 18px;
+    border-radius: 3px;
+    transform: rotate(-2deg);
+    box-shadow: 3px 5px 12px #8d7b9b55;
+}
+
+.postit span, .postit p, .postit small {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.postit::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: -7px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at 35% 30%,
+        #f5c5ff,
+        #a66bd1 65%,
+        #75409e
+    );
+    box-shadow: 1px 2px 3px #55555566;
+}
+
+.postit::after {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 12px;
+    top: 5px;
+    left: calc(50% + 4px);
+    transform: rotate(35deg);
+    background: #75409e;
+}
+
+/* Estadísticas */
+
+.estadisticas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.stat, .panel, .frase {
+    background: white;
+    border-radius: 15px;
+    padding: 16px;
+    box-shadow: 0 4px 15px #b9a9d533;
+}
+
+.stat span, .stat strong {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.stat strong {
+    font-size: 23px;
+    color: #8056c7;
+}
+
+/* Frase */
+
+.frase {
+    background: #8d6bd0;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.frase p {
+    font-size: 19px;
+    margin-top: 8px;
+}
+
+/* Paneles */
+
+.panel {
+    margin-bottom: 18px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+/* Progreso */
+
+.progreso {
+    text-align: center;
+}
+
+.circulo {
+    width: 110px;
+    height: 110px;
+    margin: 10px auto;
+    border: 8px solid #cbb8f4;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    text-align: center;
+}
+
+.circulo strong {
+    font-size: 22px;
+}
+
+.circulo small {
+    font-size: 11px;
+}
+
+/* Botones */
+
+button {
+    border: none;
+    background: #eee8ff;
+    color: #6849a5;
+    padding: 9px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Calendario */
+
+.dias, .numeros {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 7px;
+    text-align: center;
+    margin-top: 12px;
+}
+
+.numeros button.hoy,
+.numeros button.seleccionado,
+.filtros button.activo {
+    background: #8965cc;
+    color: white;
+}
+
+/* Tareas */
+
+.filtros {
+    display: flex;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+#listaTareas {
+    list-style: none;
+}
+
+#listaTareas li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee8f7;
+}
+
+#listaTareas li label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+#listaTareas input {
+    accent-color: #8965cc;
+}
+
+#listaTareas li.completada span {
+    text-decoration: line-through;
+    color: #999;
+}
+
+/* Pie de página */
+
+footer {
+    text-align: center;
+    padding: 15px;
+    color: #82769e;
+}
+
+/* Celulares */
+
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    .encabezado {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .estadisticas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .postit {
+        max-width: none;
+    }
+}
